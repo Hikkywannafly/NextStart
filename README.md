@@ -12,7 +12,7 @@ tooling**
 
 Ship your next project 10x faster with a fully configured, type-safe foundation.
 
-[Get Started](#quick-start) · [Live Demo](https://nextstart-demo.vercel.app) ·
+[Get Started](#quick-start) · [Live Demo](https://next-start-khaki.vercel.app/) ·
 [Documentation](#features) ·
 [Report Bug](https://github.com/Hikkywannafly/NextStart/issues)
 
