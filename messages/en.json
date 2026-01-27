@@ -1,0 +1,151 @@
+{
+  "common": {
+    "welcome": "Welcome to NextStart",
+    "getStarted": "Get Started",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "search": "Search"
+  },
+  "header": {
+    "features": "Features",
+    "preview": "Preview",
+    "demo": "Demo",
+    "login": "Login",
+    "getStarted": "Get Started",
+    "languageSwitch": "Switch language",
+    "themeToggle": "Toggle theme"
+  },
+  "hero": {
+    "badge": "Production-ready Next.js 16 Boilerplate",
+    "title": "Build Your Next Project",
+    "titleHighlight": "10x Faster",
+    "description": "NextStart is a modern, production-ready boilerplate with Supabase, shadcn/ui, and all the tools you need to ship fast.",
+    "ctaPrimary": "Get Started",
+    "ctaSecondary": "View on GitHub",
+    "stat1": "16+",
+    "stat1Text": "Components",
+    "stat2": "100%",
+    "stat2Text": "TypeScript",
+    "stat3": "5min",
+    "stat3Text": "Setup Time"
+  },
+  "features": {
+    "title": "Everything You Need",
+    "subtitle": "Production-Ready Features",
+    "description": "Built with modern tools and best practices for rapid development",
+    "list": [
+      {
+        "title": "Next.js 16 App Router",
+        "description": "Latest Next.js with server components, streaming, and optimized performance."
+      },
+      {
+        "title": "Supabase Integration",
+        "description": "Complete authentication, database, and real-time features out of the box."
+      },
+      {
+        "title": "shadcn/ui Components",
+        "description": "48+ beautiful, accessible components built with Radix UI and Tailwind CSS."
+      },
+      {
+        "title": "TypeScript Strict Mode",
+        "description": "Full type safety with strict TypeScript configuration and auto-generated types."
+      },
+      {
+        "title": "Internationalization",
+        "description": "Multi-language support with next-intl for seamless localization."
+      },
+      {
+        "title": "Dark Mode",
+        "description": "Beautiful dark mode with next-themes and automatic system preference detection."
+      },
+      {
+        "title": "Form Validation",
+        "description": "React Hook Form with Zod schema validation for type-safe forms."
+      },
+      {
+        "title": "Code Quality",
+        "description": "Biome for linting and formatting, ensuring consistent code quality."
+      },
+      {
+        "title": "Developer Experience",
+        "description": "Hot reload, TypeScript, ESLint, and Prettier configured for optimal DX."
+      }
+    ]
+  },
+  "preview": {
+    "title": "See It In Action",
+    "subtitle": "Code Examples",
+    "description": "Real-world examples of authentication, API routes, and deployment",
+    "tabs": {
+      "auth": "Authentication",
+      "api": "API Routes",
+      "deploy": "Deployment"
+    }
+  },
+  "showcase": {
+    "badge": "Live Demo",
+    "title": "Try It Yourself",
+    "description": "Interact with real features included in the boilerplate. Everything you see here is ready to use.",
+    "features": [
+      {
+        "title": "Dark Mode",
+        "description": "Toggle between light and dark themes"
+      },
+      {
+        "title": "Internationalization",
+        "description": "Switch between English and Vietnamese"
+      },
+      {
+        "title": "Form Validation",
+        "description": "React Hook Form with Zod validation"
+      },
+      {
+        "title": "Protected Routes",
+        "description": "Authentication-based route protection"
+      },
+      {
+        "title": "shadcn/ui Components",
+        "description": "48+ pre-installed UI components"
+      }
+    ],
+    "interactive": {
+      "themeTitle": "Theme Switcher",
+      "themeDescription": "Try switching between light and dark mode",
+      "languageTitle": "Language Selector",
+      "languageDescription": "Switch between English and Vietnamese",
+      "viewForm": "View Form Example",
+      "viewProtected": "Protected Route Demo"
+    }
+  },
+  "cta": {
+    "title": "Ready to Build Something",
+    "titleHighlight": "Amazing?",
+    "description": "Get started with NextStart and ship your next project in minutes, not weeks.",
+    "ctaPrimary": "Get Started Now",
+    "ctaSecondary": "View Documentation",
+    "quickStart": "Quick Start",
+    "step1": "npx create-next-app -e https://github.com/yourusername/nextstart",
+    "step2": "cd nextstart && pnpm install",
+    "step3": "pnpm dev",
+    "stats": {
+      "stars": "GitHub Stars",
+      "license": "MIT License",
+      "openSource": "Open Source"
+    }
+  },
+  "footer": {
+    "brand": "NextStart",
+    "tagline": "Production-Ready Next.js Boilerplate",
+    "description": "Ship your next project 10x faster",
+    "copyright": "© 2024 NextStart. All rights reserved.",
+    "product": "Product",
+    "company": "Company",
+    "legal": "Legal",
+    "support": "Support"
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "common": {
+    "welcome": "Chào mừng đến với NextStart",
+    "getStarted": "Bắt Đầu",
+    "loading": "Đang tải...",
+    "error": "Đã xảy ra lỗi",
+    "save": "Lưu",
+    "cancel": "Hủy",
+    "delete": "Xóa",
+    "edit": "Sửa",
+    "create": "Tạo",
+    "search": "Tìm kiếm"
+  },
+  "header": {
+    "features": "Tính Năng",
+    "preview": "Xem Trước",
+    "demo": "Demo",
+    "login": "Đăng Nhập",
+    "getStarted": "Bắt Đầu",
+    "languageSwitch": "Chuyển ngôn ngữ",
+    "themeToggle": "Chuyển chế độ sáng/tối"
+  },
+  "hero": {
+    "badge": "Boilerplate Next.js 16 Production-Ready",
+    "title": "Xây Dựng Dự Án Tiếp Theo",
+    "titleHighlight": "Nhanh Gấp 10 Lần",
+    "description": "NextStart là boilerplate hiện đại, sẵn sàng cho production với Supabase, shadcn/ui và tất cả công cụ bạn cần để ship nhanh chóng.",
+    "ctaPrimary": "Bắt Đầu",
+    "ctaSecondary": "Xem trên GitHub",
+    "stat1": "16+",
+    "stat1Text": "Components",
+    "stat2": "100%",
+    "stat2Text": "TypeScript",
+    "stat3": "5 phút",
+    "stat3Text": "Thời Gian Setup"
+  },
+  "features": {
+    "title": "Mọi Thứ Bạn Cần",
+    "subtitle": "Tính Năng Production-Ready",
+    "description": "Được xây dựng với công cụ hiện đại và best practices cho phát triển nhanh",
+    "list": [
+      {
+        "title": "Next.js 16 App Router",
+        "description": "Next.js mới nhất với server components, streaming và hiệu suất tối ưu."
+      },
+      {
+        "title": "Tích Hợp Supabase",
+        "description": "Authentication, database và real-time features hoàn chỉnh ngay từ đầu."
+      },
+      {
+        "title": "shadcn/ui Components",
+        "description": "48+ components đẹp, accessible được xây dựng với Radix UI và Tailwind CSS."
+      },
+      {
+        "title": "TypeScript Strict Mode",
+        "description": "Type safety đầy đủ với cấu hình TypeScript strict và auto-generated types."
+      },
+      {
+        "title": "Đa Ngôn Ngữ",
+        "description": "Hỗ trợ nhiều ngôn ngữ với next-intl cho localization liền mạch."
+      },
+      {
+        "title": "Chế Độ Tối",
+        "description": "Dark mode đẹp mắt với next-themes và tự động phát hiện system preference."
+      },
+      {
+        "title": "Validation Form",
+        "description": "React Hook Form với Zod schema validation cho type-safe forms."
+      },
+      {
+        "title": "Chất Lượng Code",
+        "description": "Biome cho linting và formatting, đảm bảo code quality nhất quán."
+      },
+      {
+        "title": "Trải Nghiệm Developer",
+        "description": "Hot reload, TypeScript, ESLint và Prettier được cấu hình cho DX tối ưu."
+      }
+    ]
+  },
+  "preview": {
+    "title": "Xem Hoạt Động Thực Tế",
+    "subtitle": "Ví Dụ Code",
+    "description": "Ví dụ thực tế về authentication, API routes và deployment",
+    "tabs": {
+      "auth": "Xác Thực",
+      "api": "API Routes",
+      "deploy": "Triển Khai"
+    }
+  },
+  "showcase": {
+    "badge": "Demo Trực Tiếp",
+    "title": "Thử Ngay Bây Giờ",
+    "description": "Tương tác với các tính năng thực tế có trong boilerplate. Mọi thứ bạn thấy ở đây đều sẵn sàng sử dụng.",
+    "features": [
+      {
+        "title": "Chế Độ Tối",
+        "description": "Chuyển đổi giữa giao diện sáng và tối"
+      },
+      {
+        "title": "Đa Ngôn Ngữ",
+        "description": "Chuyển đổi giữa tiếng Anh và tiếng Việt"
+      },
+      {
+        "title": "Validation Form",
+        "description": "React Hook Form với Zod validation"
+      },
+      {
+        "title": "Protected Routes",
+        "description": "Bảo vệ route dựa trên authentication"
+      },
+      {
+        "title": "shadcn/ui Components",
+        "description": "48+ UI components đã cài đặt sẵn"
+      }
+    ],
+    "interactive": {
+      "themeTitle": "Chuyển Đổi Theme",
+      "themeDescription": "Thử chuyển đổi giữa chế độ sáng và tối",
+      "languageTitle": "Chọn Ngôn Ngữ",
+      "languageDescription": "Chuyển đổi giữa tiếng Anh và tiếng Việt",
+      "viewForm": "Xem Ví Dụ Form",
+      "viewProtected": "Demo Protected Route"
+    }
+  },
+  "cta": {
+    "title": "Sẵn Sàng Xây Dựng Điều Gì Đó",
+    "titleHighlight": "Tuyệt Vời?",
+    "description": "Bắt đầu với NextStart và ship dự án tiếp theo của bạn trong vài phút, không phải vài tuần.",
+    "ctaPrimary": "Bắt Đầu Ngay",
+    "ctaSecondary": "Xem Tài Liệu",
+    "quickStart": "Khởi Động Nhanh",
+    "step1": "npx create-next-app -e https://github.com/yourusername/nextstart",
+    "step2": "cd nextstart && pnpm install",
+    "step3": "pnpm dev",
+    "stats": {
+      "stars": "GitHub Stars",
+      "license": "Giấy Phép MIT",
+      "openSource": "Mã Nguồn Mở"
+    }
+  },
+  "footer": {
+    "brand": "NextStart",
+    "tagline": "Boilerplate Next.js Production-Ready",
+    "description": "Ship dự án tiếp theo nhanh gấp 10 lần",
+    "copyright": "© 2024 NextStart. Bảo lưu mọi quyền.",
+    "product": "Sản Phẩm",
+    "company": "Công Ty",
+    "legal": "Pháp Lý",
+    "support": "Hỗ Trợ"
+  }
+}
