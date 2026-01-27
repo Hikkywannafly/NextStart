@@ -3,6 +3,7 @@
 import { ArrowRight, Github, Star } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/config/site";
 
 export function CtaSection() {
   return (
@@ -24,8 +25,8 @@ export function CtaSection() {
 
           {/* Description */}
           <p className="mb-8 text-lg text-muted-foreground sm:text-xl">
-            Get started with NextStart today and ship your next project 10x
-            faster.
+            Get started with {siteConfig.name} today and ship your next project
+            10x faster.
           </p>
 
           {/* CTA Buttons */}
@@ -47,7 +48,7 @@ export function CtaSection() {
               asChild
             >
               <a
-                href="https://github.com"
+                href={siteConfig.links.github}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -64,8 +65,8 @@ export function CtaSection() {
             </div>
             <div className="glass-card smooth-transition cursor-pointer rounded-lg p-4 hover:shadow-md">
               <code className="block text-sm">
-                <span className="text-muted-foreground">$</span> git clone
-                your-repo-url
+                <span className="text-muted-foreground">$</span> git clone{" "}
+                {siteConfig.links.github}
               </code>
             </div>
             <div className="glass-card smooth-transition cursor-pointer rounded-lg p-4 hover:shadow-md">
@@ -84,12 +85,12 @@ export function CtaSection() {
           <div className="mt-12 flex items-center justify-center gap-6 text-muted-foreground text-sm">
             <div className="flex items-center gap-2">
               <Star className="h-4 w-4 fill-orange-500 text-orange-500" />
-              <span>1.2k stars</span>
+              <span>Open Source</span>
             </div>
             <div className="h-4 w-px bg-border" />
             <div>MIT License</div>
             <div className="h-4 w-px bg-border" />
-            <div>Free & Open Source</div>
+            <div>Free Forever</div>
           </div>
         </div>
       </div>
