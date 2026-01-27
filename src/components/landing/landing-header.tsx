@@ -4,7 +4,6 @@ import { Github, Coffee } from "lucide-react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
-import { Logo } from "@/components/logo";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { siteConfig } from "@/config/site";
@@ -24,7 +23,6 @@ export function LandingHeader() {
       <div className="flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <Logo className="h-8 w-8" />
           <span className="font-bold text-lg">{siteConfig.name}</span>
         </Link>
 
