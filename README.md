@@ -1,374 +1,321 @@
-# NextStart Boilerplate
+# NextStart
 
-A production-ready Next.js 16 starter template with Supabase authentication,
-shadcn/ui components, and Tailwind CSS v4.
+<div align="center">
+
+![NextStart Banner](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)
+![Supabase](https://img.shields.io/badge/Supabase-Ready-green?style=for-the-badge&logo=supabase)
+![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
+
+**Production-ready Next.js 16 boilerplate with Supabase, shadcn/ui, and modern
+tooling**
+
+Ship your next project 10x faster with a fully configured, type-safe foundation.
+
+[Get Started](#quick-start) · [Live Demo](https://nextstart-demo.vercel.app) ·
+[Documentation](#features) ·
+[Report Bug](https://github.com/Hikkywannafly/NextStart/issues)
+
+</div>
+
+---
 
 ## ✨ Features
 
-### Core Stack
+### 🚀 Core Stack
 
-- ⚡ **Next.js 16** - Latest Next.js with App Router and React 19
-- 🗄️ **Supabase** - Authentication and database with SSR support
-- 🎨 **shadcn/ui** - Beautiful, accessible UI components
-- 🎯 **Tailwind CSS v4** - Latest Tailwind with modern features
-- 📘 **TypeScript** - Full type safety with strict mode
+- **[Next.js 16](https://nextjs.org/)** - App Router, Server Components,
+  Streaming
+- **[React 19](https://react.dev/)** - Latest React features
+- **[TypeScript](https://www.typescriptlang.org/)** - Strict mode, full type
+  safety
+- **[Supabase](https://supabase.com/)** - Authentication, Database, Real-time
+- **[Tailwind CSS v4](https://tailwindcss.com/)** - Utility-first styling
 
-### Developer Experience
+### 🎨 UI & Components
 
-- 🔧 **Biome** - Fast linter and formatter (replaces ESLint + Prettier)
-- 🪝 **Husky** - Git hooks for code quality
-- 📝 **Commitlint** - Conventional commit messages
-- 🔄 **React Query** - Powerful data fetching and caching
-- 🌍 **next-intl** - Internationalization ready
-- 🌙 **next-themes** - Dark mode support
+- **[shadcn/ui](https://ui.shadcn.com/)** - 48+ beautiful, accessible components
+- **[Radix UI](https://www.radix-ui.com/)** - Unstyled, accessible primitives
+- **[Lucide Icons](https://lucide.dev/)** - Beautiful icon library
+- **Dark Mode** - Built-in theme switching with `next-themes`
 
-### UI Components (shadcn/ui)
+### 🌍 Developer Experience
 
-All Radix UI components pre-installed:
+- **[Biome](https://biomejs.dev/)** - Fast linting & formatting
+- **[next-intl](https://next-intl-docs.vercel.app/)** - Internationalization
+  (i18n)
+- **[React Query](https://tanstack.com/query)** - Data fetching & caching
+- **[React Hook Form](https://react-hook-form.com/)** +
+  **[Zod](https://zod.dev/)** - Type-safe forms
+- **[Husky](https://typicode.github.io/husky/)** +
+  **[Commitlint](https://commitlint.js.org/)** - Git hooks & conventional
+  commits
 
-- Accordion, Alert Dialog, Avatar, Button, Card, Checkbox
-- Dialog, Dropdown Menu, Form, Input, Label, Select
-- Tabs, Toast, Tooltip, and many more...
+### 📦 Project Structure
+
+```
+src/
+├── app/              # Next.js App Router pages
+├── components/       # React components & UI library
+│   ├── ui/          # shadcn/ui components
+│   ├── layouts/     # Layout components
+│   └── landing/     # Landing page sections
+├── lib/             # Utilities & configurations
+├── hooks/           # Custom React hooks
+├── types/           # TypeScript type definitions
+└── config/          # Site configuration
+```
+
+---
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 
-- Node.js 20+
-- pnpm (required - this project uses pnpm)
-- Supabase account
+- **Node.js** 18+ and **pnpm** (recommended)
+- **Supabase** account (free tier available)
 
-### Installation
+### 1. Use This Template
 
-1. **Clone the repository**
-   ```bash
-   git clone <your-repo-url>
-   cd nextstart-boilerplate
-   ```
+Click the **"Use this template"** button at the top of this repository, or clone
+it:
 
-2. **Install dependencies**
-   ```bash
-   pnpm install
-   ```
-
-3. **Set up environment variables**
-   ```bash
-   cp .env.example .env.local
-   ```
-
-   Update `.env.local` with your Supabase credentials:
-   ```env
-   NEXT_PUBLIC_SUPABASE_URL=your-project-url.supabase.co
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
-   ```
-
-4. **Run the development server**
-   ```bash
-   pnpm dev
-   ```
-
-5. **Open your browser** Navigate to
-   [http://localhost:3000](http://localhost:3000)
-
-## 📁 Project Structure
-
-```
-nextstart-boilerplate/
-├── src/
-│   ├── app/
-│   │   ├── [locale]/          # Internationalized routes
-│   │   │   ├── dashboard/     # Dashboard example
-│   │   │   ├── examples/      # Example components showcase
-│   │   │   ├── protected/     # Protected route example
-│   │   │   ├── layout.tsx     # Root layout
-│   │   │   └── page.tsx       # Landing page
-│   │   └── api/
-│   │       ├── auth/          # Auth callback routes
-│   │       └── example/       # Example API route
-│   ├── components/
-│   │   ├── examples/          # Example components
-│   │   ├── layouts/           # Layout components
-│   │   ├── providers/         # React providers
-│   │   └── ui/                # shadcn/ui components
-│   ├── hooks/                 # Custom React hooks
-│   ├── i18n/                  # Internationalization config
-│   ├── lib/
-│   │   ├── auth/              # Auth utilities
-│   │   ├── react-query/       # React Query setup
-│   │   ├── supabase/          # Supabase clients
-│   │   ├── theme.ts           # Theme utilities
-│   │   └── utils.ts           # Utility functions
-│   ├── types/
-│   │   └── db/                # Database type definitions
-│   ├── middleware.ts          # Next.js middleware
-│   └── env.mjs                # Environment validation
-├── messages/                  # i18n translation files
-├── public/                    # Static assets
-├── .husky/                    # Git hooks
-├── .nvmrc                     # Node.js version
-├── biome.jsonc               # Biome configuration
-├── CHANGELOG.md              # Version history
-├── components.json           # shadcn/ui configuration
-├── next.config.mjs           # Next.js configuration
-├── tailwind.config.ts        # Tailwind configuration
-└── tsconfig.json             # TypeScript configuration
+```bash
+git clone https://github.com/Hikkywannafly/NextStart.git my-project
+cd my-project
 ```
 
-## 🗄️ Supabase Setup
+### 2. Install Dependencies
 
-### 1. Create a Supabase Project
+```bash
+pnpm install
+```
+
+### 3. Set Up Environment Variables
+
+Copy the example environment file:
+
+```bash
+cp .env.example .env.local
+```
+
+Update `.env.local` with your Supabase credentials:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+```
+
+### 4. Configure Site Settings
+
+Update `src/config/site.ts` with your project information:
+
+```typescript
+export const siteConfig = {
+   name: "YourApp",
+   description: "Your app description",
+   url: "https://yourapp.com",
+
+   author: {
+      name: "Your Name",
+      github: "https://github.com/yourusername",
+      donate: "https://ko-fi.com/yourusername",
+   },
+
+   links: {
+      github: "https://github.com/yourusername/yourapp",
+      demo: "https://yourapp.com",
+   },
+};
+```
+
+### 5. Run Development Server
+
+```bash
+pnpm dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## 📚 Available Scripts
+
+| Command          | Description                      |
+| ---------------- | -------------------------------- |
+| `pnpm dev`       | Start development server         |
+| `pnpm build`     | Build for production             |
+| `pnpm start`     | Start production server          |
+| `pnpm typecheck` | Run TypeScript type checking     |
+| `pnpm check`     | Run Biome linter & formatter     |
+| `pnpm check:fix` | Fix linting issues automatically |
+| `pnpm commit`    | Commit with conventional commits |
+
+---
+
+## 🗄️ Database Setup
+
+### 1. Create Supabase Project
 
 1. Go to [supabase.com](https://supabase.com)
 2. Create a new project
 3. Copy your project URL and anon key to `.env.local`
 
-### 2. Set Up Authentication
+### 2. Run Migrations
 
-Supabase Auth is pre-configured. You can enable additional providers in your
-Supabase dashboard:
-
-- Email/Password (enabled by default)
-- Google, GitHub, etc. (configure in Supabase dashboard)
-
-### 3. Generate Database Types
+Apply the schema migration:
 
 ```bash
 # Install Supabase CLI
-pnpm add -g supabase
+npm install -g supabase
 
-# Login to Supabase
-supabase login
+# Link your project
+supabase link --project-ref your-project-ref
 
-# Generate types
-supabase gen types typescript --project-id YOUR_PROJECT_ID > src/types/db/database.types.ts
+# Apply migrations
+supabase db push
 ```
 
-Or add this script to `package.json`:
-
-```json
-"db:types": "supabase gen types typescript --project-id YOUR_PROJECT_ID > src/types/db/database.types.ts"
-```
-
-## 🎨 Adding UI Components
-
-This project uses shadcn/ui. To add new components:
+### 3. Generate TypeScript Types
 
 ```bash
-pnpm dlx shadcn@latest add [component-name]
+supabase gen types typescript --project-id your-project-id > src/types/db/index.ts
 ```
 
-Example:
+---
 
-```bash
-pnpm dlx shadcn@latest add form
-pnpm dlx shadcn@latest add table
-```
+## 🎨 Customization
 
-## 🌍 Internationalization
+### Theme
 
-The boilerplate includes next-intl for i18n support.
+Customize colors in `src/app/globals.css`:
 
-### Add a new language
-
-1. Create a new message file in `messages/[locale].json`
-2. Add the locale to `i18nConfig.ts`
-
-### Use translations
-
-```tsx
-import { useTranslations } from "next-intl";
-
-export default function Component() {
-   const t = useTranslations("ComponentName");
-
-   return <h1>{t("title")}</h1>;
+```css
+:root {
+   --primary: #2563eb;
+   --secondary: #f1f5f9;
+   /* ... */
 }
 ```
 
-## 🔧 Development Scripts
+### Components
 
-```bash
-# Development
-pnpm dev              # Start dev server
-pnpm build            # Build for production
-pnpm start            # Start production server
-pnpm preview          # Build and start production server
+All UI components are in `src/components/ui/`. Modify them to match your design
+system.
 
-# Code Quality
-pnpm lint             # Lint code
-pnpm lint:fix         # Lint and fix issues
-pnpm format           # Format code
-pnpm check            # Lint and format
-pnpm typecheck        # Type check
+### Internationalization
 
-# Git
-pnpm commit           # Commit with conventional commits
+Add new languages in `messages/`:
+
+```
+messages/
+├── en.json
+├── vi.json
+└── your-language.json
 ```
 
-## 📝 Code Quality
+---
 
-### Biome
+## 📖 Documentation
 
-This project uses Biome instead of ESLint + Prettier for faster linting and
-formatting.
+### Key Features Explained
 
-```bash
-pnpm check            # Lint and format all files
-```
+#### Authentication
 
-### Git Hooks
+- Supabase Auth with email/password, OAuth providers
+- Protected routes with middleware
+- Server-side session handling
 
-Husky is configured to run checks before commits:
+#### Forms
 
-- Pre-commit: Runs Biome on staged files
-- Commit-msg: Validates commit message format
+- Type-safe forms with React Hook Form + Zod
+- Example form in `/examples` page
+- Automatic validation and error handling
 
-### Commit Messages
+#### Styling
 
-Use conventional commits:
+- Tailwind CSS v4 with custom design tokens
+- Dark mode support out of the box
+- Responsive design utilities
 
-```bash
-pnpm commit           # Interactive commit with commitizen
-```
+#### Code Quality
 
-Format: `type(scope): message`
+- Biome for fast linting & formatting
+- Husky for pre-commit hooks
+- Conventional commits enforced
 
-- `feat`: New feature
-- `fix`: Bug fix
-- `docs`: Documentation
-- `style`: Code style
-- `refactor`: Code refactoring
-- `test`: Tests
-- `chore`: Maintenance
+---
 
 ## 🚢 Deployment
 
 ### Vercel (Recommended)
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Hikkywannafly/NextStart)
+
 1. Push your code to GitHub
-2. Import project in Vercel
+2. Import your repository in Vercel
 3. Add environment variables
-4. Deploy
+4. Deploy!
 
 ### Other Platforms
 
-This is a standard Next.js app and can be deployed to:
+This template works with any platform that supports Next.js:
 
-- Netlify
-- Railway
-- AWS Amplify
-- Self-hosted with Docker
-
-## 🔐 Environment Variables
-
-Required variables:
-
-```env
-NEXT_PUBLIC_SUPABASE_URL=        # Your Supabase project URL
-NEXT_PUBLIC_SUPABASE_ANON_KEY=   # Your Supabase anon key
-```
-
-Optional variables:
-
-```env
-NEXT_PUBLIC_SITE_URL=            # Your site URL (auto-detected on Vercel)
-```
-
-## 🎯 What's Included
-
-### Authentication
-
-- ✅ Supabase Auth with SSR configured
-- ✅ Auth callback route setup
-- ✅ Protected route example
-- ✅ Environment variable validation
-- ⚠️ Login/signup pages not included (add as needed)
-
-### Example Components
-
-- ✅ Form with validation (react-hook-form + Zod)
-- ✅ Protected route with auth check
-- ✅ API route with validation
-- ✅ Server component patterns
-- ✅ Examples showcase page
-
-### UI/UX
-
-- ✅ Responsive layouts
-- ✅ Dark mode support
-- ✅ Loading states
-- ✅ Toast notifications (Sonner)
-- ✅ Form handling (react-hook-form + Zod)
-
-### Developer Tools
-
-- ✅ TypeScript strict mode
-- ✅ Path aliases (@/...)
-- ✅ Git hooks
-- ✅ Commit linting
-- ✅ Code formatting
-
-## 🛠️ Customization
-
-### Theme
-
-Edit `src/app/globals.css` to customize colors and design tokens.
-
-### Fonts
-
-The default font is Nunito. To change:
-
-1. Update `src/app/[locale]/layout.tsx`
-2. Import your preferred Google Font
-
-### Layout
-
-- Header: `src/components/layouts/header.tsx`
-- Footer: `src/components/layouts/footer.tsx`
-- Dashboard: `src/components/layouts/dashboard-layout.tsx`
-
-## 📚 Learn More
-
-### Documentation
-
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Supabase Documentation](https://supabase.com/docs)
-- [shadcn/ui Documentation](https://ui.shadcn.com)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [React Query Documentation](https://tanstack.com/query/latest)
-
-### Resources
-
-- [Next.js App Router](https://nextjs.org/docs/app)
-- [Supabase Auth](https://supabase.com/docs/guides/auth)
-- [Radix UI](https://www.radix-ui.com)
-- [Biome](https://biomejs.dev)
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Run `pnpm check` to ensure code quality
-5. Commit using `pnpm commit`
-6. Push and create a pull request
-
-## 📄 License
-
-MIT License - feel free to use this boilerplate for your projects!
-
-## 🙏 Acknowledgments
-
-- [Next.js](https://nextjs.org) by Vercel
-- [Supabase](https://supabase.com) for backend infrastructure
-- [shadcn](https://ui.shadcn.com) for the amazing UI components
-- [Tailwind CSS](https://tailwindcss.com) for styling
-- [Radix UI](https://www.radix-ui.com) for accessible components
+- **Netlify**
+- **Railway**
+- **Render**
+- **AWS Amplify**
 
 ---
 
-**Happy coding! 🚀**
+## 🤝 Contributing
 
-If you find this boilerplate helpful, please give it a ⭐ on GitHub!
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'feat: add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
+for details.
+
+---
+
+## 💖 Support
+
+If you find this template helpful, please consider:
+
+- ⭐ **Starring this repository**
+- ☕ **[Buying me a coffee](https://ko-fi.com/nekozzuki)**
+- 🐛 **[Reporting bugs](https://github.com/Hikkywannafly/NextStart/issues)**
+- 💡
+  **[Suggesting features](https://github.com/Hikkywannafly/NextStart/issues)**
+
+---
+
+## 🙏 Acknowledgments
+
+Built with amazing open-source projects:
+
+- [Next.js](https://nextjs.org/)
+- [Supabase](https://supabase.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Radix UI](https://www.radix-ui.com/)
+
+---
+
+<div align="center">
+
+**Made with ❤️ by [Nekozzuki](https://github.com/Hikkywannafly)**
+
+[GitHub](https://github.com/Hikkywannafly) ·
+[Ko-fi](https://ko-fi.com/nekozzuki)
+
+</div>

@@ -1,90 +1,105 @@
 "use client";
 
-import { Github, Rocket } from "lucide-react";
+import { Github, Coffee } from "lucide-react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { LanguageSwitcher } from "@/components/language-switcher";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/logo";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { LanguageSwitcher } from "@/components/language-switcher";
+import { siteConfig } from "@/config/site";
 
 export function LandingHeader() {
   const t = useTranslations("header");
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <header className="fixed top-0 right-0 left-0 z-50 px-4 pt-4 sm:px-6 lg:px-8">
-      <div className="glass-card container mx-auto flex items-center justify-between rounded-2xl border-0 px-4 py-3 shadow-lg sm:px-6">
+    <header className="glass-card fixed top-4 left-1/2 z-50 w-[95%] max-w-6xl -translate-x-1/2 rounded-full border border-border/40 px-6 py-3 shadow-lg backdrop-blur-md">
+      <div className="flex items-center justify-between">
         {/* Logo */}
-        <Link
-          href="/"
-          className="flex items-center gap-2 font-bold text-xl transition-colors hover:text-blue-600 dark:hover:text-blue-400"
-        >
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-orange-500">
-            <Rocket className="h-5 w-5 text-white" />
-          </div>
-          <span className="hidden sm:inline">NextStart</span>
+        <Link href="/" className="flex items-center gap-2">
+          <Logo className="h-8 w-8" />
+          <span className="font-bold text-lg">{siteConfig.name}</span>
         </Link>
 
-        {/* Navigation & Controls */}
-        <div className="flex items-center gap-2 sm:gap-4">
-          {/* Navigation Links - Hidden on mobile */}
-          <nav className="hidden items-center gap-6 md:flex">
+        {/* Navigation */}
+        <nav className="hidden items-center gap-6 md:flex">
+          <button
+            type="button"
+            onClick={() => scrollToSection("features")}
+            className="cursor-pointer font-medium text-muted-foreground text-sm transition-colors hover:text-foreground"
+          >
+            {t("features")}
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollToSection("preview")}
+            className="cursor-pointer font-medium text-muted-foreground text-sm transition-colors hover:text-foreground"
+          >
+            {t("preview")}
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollToSection("showcase")}
+            className="cursor-pointer font-medium text-muted-foreground text-sm transition-colors hover:text-foreground"
+          >
+            {t("demo")}
+          </button>
+        </nav>
+
+        {/* Actions */}
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <LanguageSwitcher />
+
+          {/* Ko-fi Donate Button */}
+          <Button
+            size="sm"
+            variant="ghost"
+            className="hidden gap-2 rounded-full sm:inline-flex"
+            asChild
+          >
             <a
-              href="#features"
-              className="cursor-pointer font-medium text-muted-foreground text-sm transition-colors hover:text-foreground"
+              href={siteConfig.author.donate}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              {t("features")}
+              <Coffee className="h-4 w-4" />
+              <span className="hidden lg:inline">Support</span>
             </a>
+          </Button>
+
+          {/* GitHub Button */}
+          <Button
+            size="sm"
+            variant="ghost"
+            className="hidden gap-2 rounded-full sm:inline-flex"
+            asChild
+          >
             <a
-              href="#preview"
-              className="cursor-pointer font-medium text-muted-foreground text-sm transition-colors hover:text-foreground"
+              href={siteConfig.links.github}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              {t("preview")}
+              <Github className="h-4 w-4" />
+              <span className="hidden lg:inline">GitHub</span>
             </a>
-            <a
-              href="#showcase"
-              className="cursor-pointer font-medium text-muted-foreground text-sm transition-colors hover:text-foreground"
-            >
-              {t("demo")}
-            </a>
-          </nav>
+          </Button>
 
-          {/* Divider */}
-          <div className="hidden h-6 w-px bg-border md:block" />
-
-          {/* Interactive Controls */}
-          <div className="flex items-center gap-2">
-            {/* Language Switcher */}
-            <LanguageSwitcher />
-
-            {/* Theme Toggle */}
-            <ThemeToggle />
-
-            {/* GitHub Button */}
-            <Button
-              variant="ghost"
-              size="icon"
-              className="cursor-pointer"
-              asChild
-            >
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="View on GitHub"
-              >
-                <Github className="h-5 w-5" />
-              </a>
-            </Button>
-
-            {/* Get Started Button - Hidden on mobile */}
-            <Button
-              size="sm"
-              className="hidden cursor-pointer bg-orange-500 text-white hover:bg-orange-600 sm:inline-flex dark:bg-orange-600 dark:hover:bg-orange-700"
-              asChild
-            >
-              <Link href="/dashboard">{t("getStarted")}</Link>
-            </Button>
-          </div>
+          {/* Get Started Button */}
+          <Button
+            size="sm"
+            className="rounded-full bg-orange-500 hover:bg-orange-600 dark:bg-orange-600 dark:hover:bg-orange-700"
+            asChild
+          >
+            <Link href="/dashboard">{t("getStarted")}</Link>
+          </Button>
         </div>
       </div>
     </header>
