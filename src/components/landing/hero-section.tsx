@@ -4,6 +4,7 @@ import { ArrowRight, Github, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/config/site";
 
 export function HeroSection() {
   const t = useTranslations("hero");
@@ -61,7 +62,7 @@ export function HeroSection() {
               asChild
             >
               <a
-                href="https://github.com"
+                href={siteConfig.links.github}
                 target="_blank"
                 rel="noopener noreferrer"
               >

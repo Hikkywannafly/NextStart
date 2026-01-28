@@ -7,7 +7,7 @@ export const siteConfig = {
   name: "NextStart",
   description:
     "Production-ready Next.js 16 boilerplate with Supabase, shadcn/ui, and modern tooling",
-  url: "https://nextstart-demo.vercel.app", // Update with your live demo URL
+  url: "https://nextstart-demo.vercel.app",
 
   author: {
     name: "Nekozzuki",
@@ -17,7 +17,7 @@ export const siteConfig = {
 
   links: {
     github: "https://github.com/Hikkywannafly/NextStart",
-    demo: "https://nextstart-demo.vercel.app", // Update with your live demo URL
+    demo: "https://nextstart-demo.vercel.app",
   },
 
   // Features included in the boilerplate
