@@ -8,6 +8,13 @@ import { Button } from "@/components/ui/button";
 export function HeroSection() {
   const t = useTranslations("hero");
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="relative flex min-h-[90vh] items-center justify-center overflow-hidden">
       {/* Aurora Gradient Background */}
@@ -42,12 +49,10 @@ export function HeroSection() {
             <Button
               size="lg"
               className="group cursor-pointer bg-orange-500 text-white hover:bg-orange-600 dark:bg-orange-600 dark:hover:bg-orange-700"
-              asChild
+              onClick={() => scrollToSection("features")}
             >
-              <Link href="/dashboard">
-                {t("ctaPrimary")}
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
+              {t("ctaPrimary")}
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
             <Button
               size="lg"

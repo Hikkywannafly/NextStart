@@ -94,9 +94,9 @@ export function LandingHeader() {
           <Button
             size="sm"
             className="rounded-full bg-orange-500 hover:bg-orange-600 dark:bg-orange-600 dark:hover:bg-orange-700"
-            asChild
+            onClick={() => scrollToSection("features")}
           >
-            <Link href="/dashboard">{t("getStarted")}</Link>
+            {t("getStarted")}
           </Button>
         </div>
       </div>
