@@ -55,7 +55,8 @@ export function PreviewSection() {
                         </p>
                         <pre className="overflow-x-auto rounded-lg bg-muted p-4 text-xs">
                           <code>{`// Server Component
-import { createClient } from '@/lib/supabase/server'
+import { createClient } from '@/supabase-clients/server'
+
 
 export default async function ProtectedPage() {
   const supabase = await createClient()

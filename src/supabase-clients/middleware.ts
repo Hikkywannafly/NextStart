@@ -1,19 +1,66 @@
-import type { NextRequest, NextResponse } from "next/server";
-import { AUTH_ROUTES, ONBOARDING_ROUTES, PROTECTED_ROUTES } from "./constants";
-import {
-  redirectToDashboard,
-  redirectToLogin,
-  redirectToOnboarding,
-} from "./redirects";
-import { getProfileForMiddleware, initSupabase } from "./supabase";
-import { checkRouteType, extractLocale, removeLocaleFromPath } from "./utils";
+import { createServerClient } from "@supabase/ssr";
+import { type NextRequest, NextResponse } from "next/server";
+
+// Route constants
+const PROTECTED_ROUTES = ["/dashboard"];
+const AUTH_ROUTES = ["/login"];
+const ONBOARDING_ROUTES = ["/onboarding"];
+
+// Locale helpers
+function extractLocale(pathname: string): string {
+  return pathname.match(/^\/([a-z]{2})(\/|$)/)?.[1] || "en";
+}
+
+function removeLocaleFromPath(pathname: string): string {
+  return pathname.replace(/^\/[a-z]{2}(\/|$)/, "/");
+}
+
+function checkRouteType(pathname: string, routes: string[]): boolean {
+  return routes.some((route) => pathname.startsWith(route));
+}
+
+// Redirect helpers
+function redirectToLogin(
+  locale: string,
+  pathname: string,
+  request: NextRequest,
+) {
+  const loginUrl = new URL(`/${locale}/login`, request.url);
+  loginUrl.searchParams.set("redirect", pathname);
+  return NextResponse.redirect(loginUrl);
+}
+
+function redirectToOnboarding(locale: string, request: NextRequest) {
+  return NextResponse.redirect(new URL(`/${locale}/onboarding`, request.url));
+}
+
+function redirectToDashboard(locale: string, request: NextRequest) {
+  return NextResponse.redirect(new URL(`/${locale}/dashboard`, request.url));
+}
 
 export async function updateSession(
   request: NextRequest,
   response: NextResponse,
 ) {
-  const supabase = await initSupabase(request, response);
-  if (!supabase) return response;
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        getAll() {
+          return request.cookies.getAll();
+        },
+        setAll(cookiesToSet) {
+          cookiesToSet.forEach(({ name, value }) => {
+            request.cookies.set(name, value);
+          });
+          cookiesToSet.forEach(({ name, value, options }) => {
+            response.cookies.set(name, value, options);
+          });
+        },
+      },
+    },
+  );
 
   const pathname = request.nextUrl.pathname;
   const locale = extractLocale(pathname);
@@ -50,10 +97,11 @@ export async function updateSession(
     (isProtectedRoute || isOnboardingRoute || isAuthRoute || isHomePage)
   ) {
     try {
-      const { data: profile, error } = await getProfileForMiddleware(
-        supabase,
-        user.id,
-      );
+      const { data: profile, error } = await supabase
+        .from("profiles")
+        .select("onboarding_completed", { count: "exact" })
+        .eq("id", user.id)
+        .single();
 
       // Profile should always exist due to trigger, but handle error gracefully
       if (error) {

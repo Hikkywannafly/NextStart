@@ -1,5 +1,5 @@
 import type { User } from "@supabase/supabase-js";
-import { createClient } from "@/lib/supabase/server";
+import { createClient } from "@/supabase-clients/server";
 
 /**
  * Get the currently authenticated user

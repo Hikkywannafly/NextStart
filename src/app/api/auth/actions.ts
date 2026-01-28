@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect as nextRedirect } from "next/navigation";
-import { createClient } from "@/lib/supabase/server";
+import { createClient } from "@/supabase-clients/server";
 
 /**
  * Get the site URL for OAuth callbacks

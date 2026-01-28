@@ -8,8 +8,6 @@ interface DashboardLayoutProps {
 
 export function DashboardLayout({ children }: DashboardLayoutProps) {
   return (
-    <div className="container mx-auto max-w-7xl space-y-6 py-8">
-      {children}
-    </div>
+    <div className="container mx-auto max-w-7xl space-y-6 py-8">{children}</div>
   );
 }

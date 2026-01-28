@@ -1,11 +1,11 @@
 "use client";
 
-import { Github, Coffee } from "lucide-react";
+import { Coffee, Github } from "lucide-react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 
 export function LandingHeader() {
@@ -19,7 +19,7 @@ export function LandingHeader() {
   };
 
   return (
-    <header className="glass-card fixed top-4 left-1/2 z-50 w-[95%] max-w-6xl -translate-x-1/2 rounded-full border border-border/40 px-6 py-3 shadow-lg backdrop-blur-md">
+    <header className="glass-card -translate-x-1/2 fixed top-4 left-1/2 z-50 w-[95%] max-w-6xl rounded-full border border-border/40 px-6 py-3 shadow-lg backdrop-blur-md">
       <div className="flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">

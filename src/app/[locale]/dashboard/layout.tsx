@@ -10,9 +10,7 @@ export default function DashboardLayout({
   return (
     <ErrorBoundary>
       <div className="flex min-h-screen w-full flex-col">
-        <main className="flex-1 overflow-y-auto bg-background">
-          {children}
-        </main>
+        <main className="flex-1 overflow-y-auto bg-background">{children}</main>
       </div>
     </ErrorBoundary>
   );

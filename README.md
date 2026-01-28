@@ -55,15 +55,19 @@ Ship your next project 10x faster with a fully configured, type-safe foundation.
 
 ```
 src/
-├── app/              # Next.js App Router pages
-├── components/       # React components & UI library
-│   ├── ui/          # shadcn/ui components
-│   ├── layouts/     # Layout components
-│   └── landing/     # Landing page sections
-├── lib/             # Utilities & configurations
-├── hooks/           # Custom React hooks
-├── types/           # TypeScript type definitions
-└── config/          # Site configuration
+├── app/                 # Next.js App Router pages
+├── components/          # React components & UI library
+│   ├── ui/             # shadcn/ui components
+│   ├── layouts/        # Layout components
+│   └── landing/        # Landing page sections
+├── supabase-clients/   # Supabase client configurations
+│   ├── client.ts       # Browser client
+│   ├── server.ts       # Server client
+│   └── middleware.ts   # Middleware client & auth logic
+├── lib/                # Utilities & configurations
+├── hooks/              # Custom React hooks
+├── types/              # TypeScript type definitions
+└── config/             # Site configuration
 ```
 
 ---
@@ -112,20 +116,20 @@ Update `src/config/site.ts` with your project information:
 
 ```typescript
 export const siteConfig = {
-   name: "YourApp",
-   description: "Your app description",
-   url: "https://yourapp.com",
+  name: "YourApp",
+  description: "Your app description",
+  url: "https://yourapp.com",
 
-   author: {
-      name: "Your Name",
-      github: "https://github.com/yourusername",
-      donate: "https://ko-fi.com/yourusername",
-   },
+  author: {
+    name: "Your Name",
+    github: "https://github.com/yourusername",
+    donate: "https://ko-fi.com/yourusername",
+  },
 
-   links: {
-      github: "https://github.com/yourusername/yourapp",
-      demo: "https://yourapp.com",
-   },
+  links: {
+    github: "https://github.com/yourusername/yourapp",
+    demo: "https://yourapp.com",
+  },
 };
 ```
 
@@ -192,9 +196,9 @@ Customize colors in `src/app/globals.css`:
 
 ```css
 :root {
-   --primary: #2563eb;
-   --secondary: #f1f5f9;
-   /* ... */
+  --primary: #2563eb;
+  --secondary: #f1f5f9;
+  /* ... */
 }
 ```
 
